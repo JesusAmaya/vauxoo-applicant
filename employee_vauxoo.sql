@@ -41,4 +41,15 @@ CREATE TABLE hobbies(
 	id_hob varchar(6) references employee_hobby (id_hob)
 );
 
+CREATE TABLE boss(
+	id_boss varchar(6) primary key,
+	first_name varchar(30) not null,
+	last_name varchar(30) not null
+);
+
+CREATE TABLE work(
+	id_emp varchar(6) references employee (id_emp),
+	id_boss varchar(6) references boss (id_boss)
+);
+
 -- ...
