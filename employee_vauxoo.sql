@@ -17,7 +17,9 @@ CREATE TABLE employee_department (
 );
 
 CREATE TABLE employee_hobby (
-
+	id_hob varchar(6) primary key,
+	name varchar(30) not null,
+	description varchar(50) not null
 );
 
 INSERT INTO employee VALUES ( '1','Jesus','Amaya');
@@ -33,5 +35,10 @@ INSERT INTO employee_deparment VALUES ( '5','Recursos Humanos','Contratacion de 
 INSERT INTO employee_deparment VALUES ( '6','Ventas','Venta de servicios');
 
 ALTER TABLE employee ADD CONSTRAINT  fk_dep FOREIGN KEY (id_department) REFERENCES employee_deparment(id_dep);
+
+CREATE TABLE hobbies(
+	id_emp varchar(6) references employee (id_emp),
+	id_hob varchar(6) references employee_hobby (id_hob)
+);
 
 -- ...
